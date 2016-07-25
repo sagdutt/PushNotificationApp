@@ -60,7 +60,7 @@ var app = {
                 // Save new registration ID
                 localStorage.setItem('registrationId', data.registrationId);
                 // Post registrationId to your app server as the value has changed
-                $.get('notification.php?id='+data.registrationId,function(result){
+                $.get('http://88.208.207.22/php/notification.php?id='+data.registrationId,function(result){
                     alert(result);
                 });
             }
