@@ -61,16 +61,16 @@ var app = {
                 // Save new registration ID
                 localStorage.setItem('registrationId', data.registrationId);
                 // Post registrationId to your app server as the value has changed
-                var request = new XMLHttpRequest();
-                request.open("GET", "http://88.208.207.22/nodejs/php/notification.php?id="+data.registrationId, true);
-                request.onreadystatechange = function() {//Call a function when the state changes.
-                    if (request.readyState == 4) {
-                        if (request.status == 200 || request.status == 0) {
-                            alert(JSON.parse(request));
-                        }
-                    }
-                }
-                request.send();
+                // var request = new XMLHttpRequest();
+                // request.open("GET", "http://88.208.207.22/nodejs/php/notification.php?id="+data.registrationId, true);
+                // request.onreadystatechange = function() {//Call a function when the state changes.
+                //     if (request.readyState == 4) {
+                //         if (request.status == 200 || request.status == 0) {
+                //             alert(JSON.parse(request));
+                //         }
+                //     }
+                // }
+                // request.send();
             }
 
             var parentElement = document.getElementById('registration');
