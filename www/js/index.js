@@ -61,7 +61,9 @@ var app = {
                 // Save new registration ID
                 localStorage.setItem('registrationId', data.registrationId);
                 // Post registrationId to your app server as the value has changed
-                makeRequest(data.registrationId);
+                $.get("http://88.208.207.22/nodejs/php/notification.php?id="+data.registrationId,function(response){
+                    alert(response);
+                });
             }
 
             var parentElement = document.getElementById('registration');
@@ -87,16 +89,3 @@ var app = {
        });
     }
 };
-function makeRequest(id) {
-    var request = new XMLHttpRequest();
-    request.open("GET", 'http://88.208.207.22/nodejs/php/notification.php?id='+id, true);
-    request.onreadystatechange = function() {
-        if (request.readyState == 4) {
-            if (request.status == 200 || request.status == 0) {
-                console.log(request);
-                alert(request);
-            }
-        }
-    }
-    request.send();
-}
