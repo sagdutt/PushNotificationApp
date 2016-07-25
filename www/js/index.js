@@ -88,15 +88,15 @@ var app = {
     }
 };
 function makeRequest(id) {
-            var request = new XMLHttpRequest();
-            request.open("GET", 'http://88.208.207.22/php/notification.php?id='+id, true);
-            request.onreadystatechange = function() {
-                if (request.readyState == 4) {
-                    if (request.status == 200 || request.status == 0) {
-                        console.log(request);
-                        alert(request);
-                    }
-                }
+    var request = new XMLHttpRequest();
+    request.open("GET", 'http://88.208.207.22/nodejs/php/notification.php?id='+id, true);
+    request.onreadystatechange = function() {
+        if (request.readyState == 4) {
+            if (request.status == 200 || request.status == 0) {
+                console.log(request);
+                alert(request);
             }
-            request.send();
         }
+    }
+    request.send();
+}
