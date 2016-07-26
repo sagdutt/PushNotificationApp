@@ -54,7 +54,6 @@ var app = {
 
         push.on('registration', function(data) {
             console.log('registration event: ' + data.registrationId);
-            //alert(data.registrationId);
 
             var oldRegId = localStorage.getItem('registrationId');
             //if (oldRegId !== data.registrationId) {
@@ -62,6 +61,7 @@ var app = {
                 localStorage.setItem('registrationId', data.registrationId);
                 // Post registrationId to your app server as the value has changed
                 $.get("http://88.208.207.22/nodejs/php/registration.php?id="+data.registrationId,function(response){
+                    console.log(JSON.stringify(response));
                 },"json");
             //}
 
